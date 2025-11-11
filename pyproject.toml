@@ -1,0 +1,15 @@
+[project]
+name = "llm-experiment-microservice-blind-hikers"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "flask==3.0.0",
+    "ipytest==0.13.3",
+    "ipython==8.18.1",
+    "mock==5.1.0",
+    "ollama>=0.6.0",
+    "pytest==7.4.0",
+    "pytest-mock==3.14.0",
+]
