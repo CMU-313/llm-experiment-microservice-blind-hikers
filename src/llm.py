@@ -16,7 +16,7 @@ from enum import Enum
 from typing import Any, Mapping, MutableMapping, Optional, Sequence
 
 
-DEFAULT_MODEL_NAME = os.getenv("OLLAMA_MODEL", "gpt-4o-mini")
+DEFAULT_MODEL_NAME = os.getenv("OLLAMA_MODEL", "llama3.1:8b")
 
 try:  # pragma: no cover - exercised indirectly via configure_client_from_env
     from ollama import Client as OllamaClient  # type: ignore

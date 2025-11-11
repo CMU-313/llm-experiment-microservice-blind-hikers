@@ -3,8 +3,15 @@ import os
 from flask import Flask
 from flask import request, jsonify
 from src.translator import translate_content
+from src.llm import configure_client_from_env
 
 app = Flask(__name__)
+
+try:
+    configure_client_from_env()
+except Exception as e:
+    print(f"Warning: Could not configure LLM client: {e}")
+    print("The service will not work without a configured LLM client.")
 
 @app.route("/")
 def translator():
