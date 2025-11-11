@@ -13,9 +13,10 @@ except Exception as e:
     print(f"Warning: Could not configure LLM client: {e}")
     print("The service will not work without a configured LLM client.")
 
-@app.route("/")
+@app.route("/translate/", methods=["POST"])
 def translator():
-    content = request.args.get("content", default = "", type = str)
+    data = request.get_json()
+    content = data.get("content", "")
     is_english, translated_content = translate_content(content)
     return jsonify({
         "is_english": is_english,
